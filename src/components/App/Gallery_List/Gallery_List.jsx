@@ -1,20 +1,15 @@
-import Axios from "axios";
-import react from "react";
 import {useState} from "react";
+import GalleryItems from "../GalleryItems/GalleryItems"
 
 function Gallery_List(props){
     //const [name, setName]= useState(null)
 
 
-
     return(
         <div>
-            <p> Gallery_List </p>
-
-            {/* <p> props: {JSON.stringify(props)}</p>
-            let galleryItems.map( (galleryItem)=>{
-                console.log(galleryItem);
-            }) */}
+            {/* <p> Gallery_List</p> */}
+            {/* <p>{ JSON.stringify(props)}</p> */} 
+            {props.galleryImages.map( image =>(<GalleryItems image={image}/>)) }
         </div>
     )
 }

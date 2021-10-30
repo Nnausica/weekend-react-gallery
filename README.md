@@ -19,6 +19,16 @@
 -sourced Gallery_List into App.jsx
 -added props to Gallery_List
 
+-drew some more pictures!
+    -gallery items live on the server side so:
+        -added use effect so i could run functions on page load
+        -added axios get call to app.js to get data from app.jsx, learned this has to be in the function app or you get Hook errors
+        -console.log(response.data) gets the array of images back. 
+    -mount the gallery images in the gallery list using <Gallery_List galleryImages={galleryImages}/>
+
+
+
+
 
 
 Your project description goes here. What problem did you solve? How did you solve it?
