@@ -23,8 +23,17 @@
     -gallery items live on the server side so:
         -added use effect so i could run functions on page load
         -added axios get call to app.js to get data from app.jsx, learned this has to be in the function app or you get Hook errors
-        -console.log(response.data) gets the array of images back. 
-    -mount the gallery images in the gallery list using <Gallery_List galleryImages={galleryImages}/>
+        -console.log(response.data) confirming it gets back the array of images. 
+        -set them on page usign const [galleryImages, setgalleryImages] = useState( [] );
+    -set up props to send down a level
+        -<Gallery_List galleryImages={galleryImages}/>
+    
+-in Galley List level
+    -use <p>{ JSON.stringify(props)}</p> */} to see the data
+    -map through the array and send images down to eh gallery item level with props
+        - {props.galleryImages.map( image =>(<GalleryItems image={image}/>)) }
+
+-in gallery items
 
 
 
