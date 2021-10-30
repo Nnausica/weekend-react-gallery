@@ -1,6 +1,7 @@
 import {useState} from "react";
 import GalleryItems from "../GalleryItems/GalleryItems"
 
+
 function Gallery_List(props){
     //const [name, setName]= useState(null)
 
