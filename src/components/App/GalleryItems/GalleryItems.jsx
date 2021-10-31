@@ -1,4 +1,5 @@
 import {useState} from "react";
+import axios from "axios";
 
 function GalleryItems(props){
     //const [name, setName]= useState(null)
@@ -21,11 +22,17 @@ function GalleryItems(props){
     const addlikes= ()=>{
         console.log('in setlikes', likes+1)
         setlikes( likes + 1)
+        axios.put(`/gallery/like/${props.image.id}`).then( (response)=>{
+            console.log('axios returndata:', response);
+        }).catch((err)=>{
+            alert('nu-uh, err in put funciton');
+            console.log(err);
+        })
+        console.log('props.image.likes:', props.image.likes);
         if(likes>=0){setanylikes(true)}
     }
     //function to switch between likes options on DOM
-
-
+  
     return(
         <div>
             {/* <p> GalleryItems</p> */}
@@ -33,13 +40,12 @@ function GalleryItems(props){
             
             {//toggle image true/false options
                 showImage ?
-                <img src={props.image.path} alt={props.image.description} onClick={ toggleImage }/>://true
+                <img class="image" src={props.image.path} alt={props.image.description} onClick={ toggleImage }/>://true
                 <h2 onClick={ toggleImage}>{props.image.description}</h2> //false
             }
 
-        
         <div>
-            <button onClick={addlikes}>Like</button> 
+            <button id="button" onClick={addlikes}>Like</button> 
             {//shows the number of likes for each image
                 anylikes ?
                 <p> {likes} likes </p>: //true
@@ -47,8 +53,6 @@ function GalleryItems(props){
             }
         </div>
             
-
-
         </div>
     )
 }

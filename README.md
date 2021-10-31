@@ -34,6 +34,18 @@
         - {props.galleryImages.map( image =>(<GalleryItems image={image}/>)) }
 
 -in gallery items
+    -tackled toggles first
+        -const [showImage, setShowImage]= useState(true);
+        -true/false options
+        -toggle function
+
+    -likes
+        -create a constant for any likes and set it to false- shows the whawha message
+        -create an add likes function to create a counter on click and switch status of anylikes to true
+        -likes has to be greater or equal to 0 to show properly
+
+    
+    
 
 
 
