@@ -7,7 +7,7 @@ function Gallery_List(props){
 
 
     return(
-        <div>
+        <div id='galleryBody'>
             {/* <p> Gallery_List</p> */}
             {/* <p>{ JSON.stringify(props)}</p> */} 
             {props.galleryImages.map( image =>(<GalleryItems image={image}/>)) }

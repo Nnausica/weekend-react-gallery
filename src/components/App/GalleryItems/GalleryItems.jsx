@@ -51,14 +51,14 @@ function GalleryItems(props){
     //function to switch between likes options on DOM
   
     return(
-        <div>
+        <div className='galleryItems'>
             {/* <p> GalleryItems</p> */}
             {/* <p>{ JSON.stringify(props)}</p> */}
             
             {//toggle image true/false options
                 showImage ?
-                <img class="image" src={props.image.path} alt={props.image.description} onClick={ toggleImage }/>://true
-                <h2 onClick={ toggleImage}>{props.image.description}</h2> //false
+                <img className="image" src={props.image.path} alt={props.image.description} onClick={ toggleImage }/>://true
+                <h2 className="picDescript" onClick={ toggleImage}>{props.image.description}</h2> //false
             }
 
         <div>

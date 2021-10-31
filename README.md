@@ -50,6 +50,16 @@
         -passed the id and the item to axios
         -created a togglelikes if/else function to show the two different text options for the likes section
 
+-Styles
+    -used a flexbox generator to create columns
+    -set classes for the images  in gallery items
+    -set the class for the text in galleryitems, and then limited the width so it woudl show up about the same size as the picture 
+    -set the parent class in the gallerylist
+    -added some additional formatting limiting the size of the pictures, and adding gaps inbetween the columns and rows.
+    -then I looked up and saved a bunch of videos/pages on bootstrap and flexboxes to look at in the future so it doesn;t look like an 8 year old put it together. 
+
+
+
     
     
 

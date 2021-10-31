@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-}
+  }
 
 .App-header {
   background-color: #222;
@@ -15,4 +15,31 @@
 
 .image {
   height: 100px;
+}
+
+#galleryBody {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: normal;
+  align-items: center;
+  align-content: center;
+
+  gap: 20px
+}
+
+.galleryItems {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  width: 25%;
+  order: 0;
+}
+
+.picDescript{
+  width: 100 px;
+  background-color: cadetblue;
+  font-size:large;
 }
