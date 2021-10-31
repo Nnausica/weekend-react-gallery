@@ -13,7 +13,6 @@ function App() {
   }, []);
   //new onReady function, 
   
-
   const [galleryImages, setgalleryImages] = useState( [] );
 
 //get the image data from the server side

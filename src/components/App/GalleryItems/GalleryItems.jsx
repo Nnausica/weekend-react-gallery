@@ -7,11 +7,27 @@ function GalleryItems(props){
     const [showImage, setShowImage]= useState(true);
     // variable= show image, function to run= setShowimage, useState= initial value
 
-    const [likes, setlikes]= useState( 0 );
-    //creates a counter
+    const [ image, setImage]= useState({
+        id: props.image.id,
+        path: props.image.path,
+        description: props.image.description, 
+        likes: props.image.likes
+    })
 
-    const [anylikes, setanylikes]= useState(false);
-    //set the status of anylikes
+    // const [anylikes, setanylikes]= useState(true);
+    
+    const togglelikes= ()=>{
+        console.log('in togglelikes')
+        let text=''
+        if(image.likes > 0){
+            text= 'likes ' + image.likes
+            // setanylikes(true)
+        }else {
+            text='No one likes this image yet!'
+        }
+            console.log('in return text')
+            return text
+        }
 
     const toggleImage = ()=>{
         console.log( 'in toggle image');
@@ -20,16 +36,17 @@ function GalleryItems(props){
     //function to toggle images
 
     const addlikes= ()=>{
-        console.log('in setlikes', likes+1)
-        setlikes( likes + 1)
-        axios.put(`/gallery/like/${props.image.id}`).then( (response)=>{
+        setImage({...image, likes: ++image.likes})
+     
+        axios.put(`/gallery/like/${image.id}`, image ).then( (response)=>{
             console.log('axios returndata:', response);
+            // if(image.likes=0){setanylikes(false)};
         }).catch((err)=>{
             alert('nu-uh, err in put funciton');
             console.log(err);
         })
         console.log('props.image.likes:', props.image.likes);
-        if(likes>=0){setanylikes(true)}
+       
     }
     //function to switch between likes options on DOM
   
@@ -46,11 +63,8 @@ function GalleryItems(props){
 
         <div>
             <button id="button" onClick={addlikes}>Like</button> 
-            {//shows the number of likes for each image
-                anylikes ?
-                <p> {likes} likes </p>: //true
-                <p> No one likes this image yet! </p> //false     
-            }
+            <p>{togglelikes()}</p>
+
         </div>
             
         </div>

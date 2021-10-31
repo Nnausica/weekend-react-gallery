@@ -43,6 +43,12 @@
         -create a constant for any likes and set it to false- shows the whawha message
         -create an add likes function to create a counter on click and switch status of anylikes to true
         -likes has to be greater or equal to 0 to show properly
+        -when I tried to add the axios put request in I couldn't make this work :(
+
+    -likes attempt #2
+        -created a constant with the array of images and their properties
+        -passed the id and the item to axios
+        -created a togglelikes if/else function to show the two different text options for the likes section
 
     
     
